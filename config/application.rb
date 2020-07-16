@@ -17,4 +17,4 @@ module Furima27497
   end
 end
 
-config.assets.initialize_on_preconpile = false
+# config.assets.initialize_on_preconpile = false
