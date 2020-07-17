@@ -31,7 +31,7 @@ Things you may want to cover:
 |password|string|null: false|
 |nickname|string|null: false, unique: true|
 |real-name|string|null: false|
-|birthday|date|null: false|
+|birthday|integer|null: false|
 ### Association
 - has_many :items
 
@@ -40,14 +40,16 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|name|text|null: false|
+|name|string|null: false|
 |explain|text|null: false|
 |detail|string|null: false|
 |deliver|datetime|null: false|
 |price|integer|null: false|
+|comment|text||
 |user_id|integer|null:false, foreign_key: true|
 ### Association
 - belong_to :user
+- belong_to :purchases
 
 
 ## sold-outsテーブル
@@ -56,3 +58,30 @@ Things you may want to cover:
 |image|string|null:false|
 ### Association
 - belong_to :user
+
+## purchasesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|card-num|integer|null: false|
+|expired|integer|null: false|
+|secure|integer|null: false|
+|postal|integer|null: false|
+|prefecture|string|null: false|
+|address1|string|null: false|
+|address2|string|null: false|
+|building|string||
+|phone-num|integer|null: false|
+### Association
+- belong_to :items
+
+## editsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false|
+|name|string|null: false|
+|explain|text|null: false|
+|detail|string|null: false|
+|deliver|datetime|null: false|
+|price|integer|null: false|
+### Association
+- belong_to :items
