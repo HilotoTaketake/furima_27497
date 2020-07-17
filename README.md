@@ -29,6 +29,7 @@ Things you may want to cover:
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
+|ensure-password|string|null: false|
 |nickname|string|null: false, unique: true|
 |h-last-name|string|null: false|
 |h-first-name|string|null: false|
@@ -37,6 +38,7 @@ Things you may want to cover:
 |birthday|integer|null: false|
 ### Association
 - has_many :items
+- has_many :purchases
 
 
 ## itemsテーブル
@@ -54,25 +56,18 @@ Things you may want to cover:
 |comment|text||
 |user_id|integer|null:false, foreign_key: true|
 ### Association
-- belong_to :user
+- belong_to :users
 - belong_to :purchases
-
-## sold-outsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image|string|null:false|
-### Association
-- belong_to :user
 
 ## purchasesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card-num|integer|null: false|
-|expired|integer|null: false|
-|secure|integer|null: false|
-|phone-num|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|item_id|integer|null: false, foreign_key: true|
 ### Association
-- belong_to :item
+- belong_to :users
+
+
 
 ## addressesテーブル
 |postal|integer|null: false|
@@ -80,5 +75,7 @@ Things you may want to cover:
 |city|string|null: false|
 |town|string|null: false|
 |building|string||
+|phone-number|integer|null: false|
+|item_id|integer|null false, foreign_key: true|
 ### Association
-- belong_to :purchase
+- belong_to :items
