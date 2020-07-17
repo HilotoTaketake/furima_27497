@@ -57,7 +57,7 @@ Things you may want to cover:
 |user_id|integer|null:false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :purchases
+- belongs_to :purchase
 
 ## purchasesテーブル
 |Column|Type|Options|
@@ -65,7 +65,7 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 |item_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
+- belongs_to :user
 
 
 
@@ -78,4 +78,4 @@ Things you may want to cover:
 |phone-number|integer|null: false|
 |item_id|integer|null false, foreign_key: true|
 ### Association
-- belongs_to :items
+- belongs_to :item
