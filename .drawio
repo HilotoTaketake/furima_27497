@@ -1,6 +1,6 @@
-<mxfile host="72ee9135-b8a2-475e-b3b0-83bc32b4c9fc" modified="2020-07-17T10:32:02.006Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.47.0 Chrome/78.0.3904.130 Electron/7.3.2 Safari/537.36" etag="j1EYTEppzkjqKltED-_h" version="13.1.3">
+<mxfile host="72ee9135-b8a2-475e-b3b0-83bc32b4c9fc" modified="2020-07-17T10:32:48.906Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.47.0 Chrome/78.0.3904.130 Electron/7.3.2 Safari/537.36" etag="7lvuN8eyRCf1233VGM4a" version="13.1.3">
     <diagram id="6hGFLwfOUW9BJ-s0fimq" name="Page-1">
-        <mxGraphModel dx="1374" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+        <mxGraphModel dx="1308" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -47,10 +47,10 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="68" value="　Adresses" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
-                    <mxGeometry x="560" y="310" width="160" height="140" as="geometry"/>
+                    <mxGeometry x="560" y="320" width="160" height="150" as="geometry"/>
                 </mxCell>
-                <mxCell id="69" value="id&#10;postal&#10;prefecture&#10;city&#10;town&#10;building&#10;phone-num" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="68">
-                    <mxGeometry y="26" width="160" height="114" as="geometry"/>
+                <mxCell id="69" value="id&#10;postal&#10;prefecture&#10;city&#10;town&#10;building&#10;phone-num&#10;item_id" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="68">
+                    <mxGeometry y="26" width="160" height="124" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
