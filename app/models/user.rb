@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :k_last_name, presence: true
   validates :k_first_name, presence: true
   validates :password, presence: true
-  validates :ensure_password, presence: true
+  validates :password_confirmation, presence: true
   validates :birthday, presence: true
 
 end
