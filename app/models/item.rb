@@ -1,20 +1,18 @@
 class Item < ApplicationRecord
 
-  validates :name, presence: true
-  validates :image, presence: true
-  validates :explain, presence: true
-  validates :category_id, presence: true
-  validates :content, presence: true
-  validates :how_pay, presence: true
-  validates :prefecture_id, presence: true
-  validates :how_long, presence: true
-  validates :user, presence:true
-  validates :price,
-    presence: true, 
-    numericality: {
-      greater_than_or_equal_to: 300,
-      less_than: 9999999
-    }
+  with_options presence: true do
+    validates :name
+    validates :image
+    validates :explain
+    validates :category_id
+    validates :content
+    validates :how_pay
+    validates :prefecture_id
+    validates :how_long
+    validates :user
+    validates :price,  numericality:{greater_than_or_equal_to: 300,less_than_or_equal_to:9999999}
+  end
+      
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
