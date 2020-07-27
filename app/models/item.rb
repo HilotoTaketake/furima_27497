@@ -1,8 +1,7 @@
 class Item < ApplicationRecord
-
+  has_one_attached :image
   with_options presence: true do
     validates :name
-    validates :image
     validates :explain
     validates :category_id
     validates :content
@@ -15,6 +14,7 @@ class Item < ApplicationRecord
       
 
   extend ActiveHash::Associations::ActiveRecordExtensions
+  # has_one_attached :image
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :category
   belongs_to :user

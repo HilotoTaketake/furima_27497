@@ -6,7 +6,6 @@ class User < ApplicationRecord
   
   has_many :items
   has_many :purchases
-
   validates :nickname, presence: true, uniqueness: true
   validates :h_last_name, presence: true
   validates :h_first_name, presence: true
