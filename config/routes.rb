@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root to: "users#index"
-  resources :users, only: [:index]
-  resources :items, only: [:index, :new, :create]
+  resources :users, only: [:index, :show]
+  resources :items, only: [:index, :new, :create, :show]
+  get '/items/:id', to: 'items#show', as: :show_item
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
