@@ -1,8 +1,14 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @item = Item.all.order("created_at DESC")
+  end
+
+  def show
+    @user = User.all
+    @category = Category.all
+    @prefecture = Prefecture.all
   end
 
   def new
@@ -18,12 +24,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def show
-    @user = User.all
-    @category = Category.all
-    @prefecture = Prefecture.all
-  end
-
   def edit
   end
 
@@ -32,6 +32,12 @@ class ItemsController < ApplicationController
       redirect_to items_path(@item)
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @item.destroy!
+      redirect_to items_path(@item)
     end
   end
 
