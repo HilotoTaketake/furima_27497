@@ -1,14 +1,8 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show]
+  before_action :set_item, only: [:show, :edit, :update]
 
   def index
     @item = Item.all.order("created_at DESC")
-  end
-
-  def show
-    @user = User.all
-    @category = Category.all
-    @prefecture = Prefecture.all
   end
 
   def new
@@ -21,6 +15,23 @@ class ItemsController < ApplicationController
       redirect_to items_path 
     else
       render :new
+    end
+  end
+
+  def show
+    @user = User.all
+    @category = Category.all
+    @prefecture = Prefecture.all
+  end
+
+  def edit
+  end
+
+  def update
+    if @item.update!(item_params)
+      redirect_to items_path(@item)
+    else
+      render :edit
     end
   end
 
