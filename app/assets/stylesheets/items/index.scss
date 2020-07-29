@@ -237,6 +237,79 @@ a {
   font-weight: bold;
 }
 
+.item-lists-o {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item-lists>.list-o {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
+
+
+.item-img-content-o {
+  position: relative;
+  width: 33vh;
+  height: 33vh;
+}
+
+.item-img-o {
+  width: 33vh;
+  height: 33vh;
+}
+
+.sold-out-o {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  background-color: crimson;
+  transform: skewY(-10deg);
+}
+
+.sold-out>span {
+  color: #FFF;
+  font-size: 45px;
+  font: bold;
+}
+
+
+.item-info-o {
+  background-color: #FFF;
+  color: black;
+  padding: 1vw;
+}
+
+.item-name-o {
+  font-size: 2.5vh;
+}
+
+.item-price-o {
+  font-size: 1.5vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.star-btn-o {
+  display: flex;
+  align-items: center;
+}
+
+.star-icon-o {
+  height: 2vh;
+  width: 2vh;
+  margin-right: 0.5vw;
+}
+
+.star-count-o {
+  font-size: 2vh;
+}
+
 .item-lists {
   width: 100vw;
   display: flex;

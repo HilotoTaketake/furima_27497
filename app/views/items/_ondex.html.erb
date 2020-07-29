@@ -1,0 +1,28 @@
+<ul class='item-lists-o'>
+  <% @item.each do |item| %>
+    <li class='list-o'>
+      <%= link_to show_item_path(item.id), method: :get do %>
+      <div class='item-img-content-o'>
+        <%= image_tag item.image.variant(combine_options:{resize:"240x240^",crop:"240x240+0+0",gravity: :center}).processed if item.image.present? %> 
+        <% if @item == 0 %>
+          <div class='sold-out-o'> 
+            <span>Sold Out!!</span> 
+          </div>
+        <% end %>
+      </div>
+        <div class='item-info-o'>
+          <h3 class='item-name-o'>
+            <%= item.name %>
+          </h3>
+          <div class='item-price-o'>
+            <span><%= item.price %><br>(税込み)</span>
+            <div class='star-btn-o'>
+              <%= image_tag "star.png", class:"star-icon-o" %>
+              <span class='star-count-o'>0</span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </li>
+  <% end %>  
+</ul>
