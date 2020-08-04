@@ -1,5 +1,5 @@
 const pay = () => {
-  Payjp.setPublicKey(process.env.PAYJP_PUBLIC_KEY);// PAY.JPテスト公開
+  Payjp.setPublicKey(process.env.PAYJP_PUBLIC_KEY);
   const form = document.getElementById("charge-form");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -8,7 +8,6 @@ const pay = () => {
     const formData = new FormData(formResult);
 
     const card = {
-      // number: formData.get("transaction_number"),
       number: $("#transaction_name").val(),
       cvc: $("#transaction_transaction_cvc").val(),
       exp_month: $("#transaction_transaction_exp_month").val(),

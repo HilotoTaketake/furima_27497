@@ -2,7 +2,7 @@ class Address < ApplicationRecord
 
   belongs_to :item
   with_options presence: true do
-    validates :postal, format: { with: /\A\d{3}[-]\d{4}\z/,  message: "should be a postal 3characters - ４characters"} 
+    validates :postal, format: { with: /\A\d{3}[-]\d{4}\z/ =~ "POSTAL_CODE_REGEX",  message: "should be a postal 3characters - ４characters"} 
     validates :japan_id
     validates :city
     validates :town

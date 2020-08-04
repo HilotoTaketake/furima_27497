@@ -6,8 +6,6 @@ class TransactionsController < ApplicationController
     @user = current_user
     @transaction = Transaction.new
     @item = Item.find(params[:id])
-    @japan = Japan.new
-    @address = Address.new
   end
 
   def create
