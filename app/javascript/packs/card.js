@@ -8,10 +8,10 @@ const pay = () => {
     const formData = new FormData(formResult);
 
     const card = {
-      number: $("#transaction_name").val(),
-      cvc: $("#transaction_transaction_cvc").val(),
-      exp_month: $("#transaction_transaction_exp_month").val(),
-      exp_year: `20${$("#transaction_transaction_exp_year").val()}`,
+      number: $("#purchase_name").val(),
+      cvc: $("#purchase_purchase_cvc").val(),
+      exp_month: $("#purchase_purchase_exp_month").val(),
+      exp_year: `20${$("#purchase_purchase_exp_year").val()}`,
     };
     Payjp.createToken(card, (status, response) => {
       if (status === 200) {
@@ -20,10 +20,10 @@ const pay = () => {
         const tokenObj = `<input value=${token} type="hidden" name='token'>`;
         renderDom.insertAdjacentHTML("beforeend", tokenObj);
 
-        document.getElementById("transaction_name").removeAttribute("name");
-        document.getElementById("transaction_transaction_cvc").removeAttribute("name");
-        document.getElementById("transaction_transaction_exp_month").removeAttribute("name");
-        document.getElementById("transaction_transaction_exp_year").removeAttribute("name");
+        document.getElementById("purchase_name").removeAttribute("name");
+        document.getElementById("purchase_purchase_cvc").removeAttribute("name");
+        document.getElementById("purchase_purchase_exp_month").removeAttribute("name");
+        document.getElementById("purchase_purchase_exp_year").removeAttribute("name");
 
         document.getElementById("charge-form").submit();
         document.getElementById("charge-form").reset();

@@ -1,22 +1,20 @@
-class TransactionsController < ApplicationController
+class PurchasesController < ApplicationController
   before_action :authenticate_user!, only: [:index]
   before_action :user_restriction, only: [:index]
-
+  before_action :set_item, only: [:create]
   def index 
     @user = current_user
-    @transaction = Transaction.new
+    @purchase = Purchase.new
     @item = Item.find(params[:id])
   end
 
   def create
-    @transaction = Transaction.new
-    @transaction.user = current_user
-    @item = Item.find(params[:format])
-    @transaction.item = @item
+    @purchase = Purchase.new
+    @purchase.user = current_user
+    @purchase.item = @item
     @address = Address.new(address_params)
     @address.item = @item
-    if @transaction.save! && @address.save! 
-      @item = Item.find(params[:format])
+    if @purchase.save! && @address.save! 
       pay_item
       return redirect_to root_path
     else
@@ -27,7 +25,11 @@ class TransactionsController < ApplicationController
   private
 
   def address_params
-    params.require(:transaction).permit(:postal, :japan_id, :city, :town, :building, :phone_number)
+    params.require(:purchase).permit(:postal, :japan_id, :city, :town, :building, :phone_number)
+  end
+
+  def set_item
+    @item = Item.find(params[:format])
   end
 
 

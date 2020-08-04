@@ -56,7 +56,7 @@ class ItemsController < ApplicationController
 
   def item_restriction
     @item = Item.find(params[:id])
-    unless @item.transactions.empty? 
+    unless @item.purchases.empty? 
       redirect_to root_path
     end
   end

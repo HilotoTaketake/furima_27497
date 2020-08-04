@@ -14,7 +14,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :category
   belongs_to :user
-  has_many :transactions
+  has_many :purchases
   has_one :address
 
   enum content:{
