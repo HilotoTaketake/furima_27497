@@ -57,9 +57,9 @@ Things you may want to cover:
 |user_id|integer|null:false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :purchase
+- has_many :purchases, 
 
-## purchasesテーブル
+## transactionsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -71,7 +71,7 @@ Things you may want to cover:
 
 ## addressesテーブル
 |postal|integer|null: false|
-|prefecture|string|null: false|
+|japan|string|null: false|
 |city|string|null: false|
 |town|string|null: false|
 |building|string||
