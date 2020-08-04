@@ -1,9 +1,11 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:destroy]
+  before_action :item_restriction, only: [:show]
 
   def index
     @item = Item.all.order("created_at DESC")
+    @user = User.all
   end
 
   def show
@@ -50,6 +52,13 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def item_restriction
+    @item = Item.find(params[:id])
+    unless @item.transactions.empty? 
+      redirect_to root_path
+    end
   end
 
 end
