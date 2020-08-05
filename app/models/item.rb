@@ -28,7 +28,7 @@ class Item < ApplicationRecord
   }
 
   enum how_long:{
-    本日発送:1,明日発送:2,明後日発送:3
+    １日〜２日:1,３日〜４日:2,６日〜７日:3
   }
 
 

@@ -1,9 +1,9 @@
 <% if @item.errors.any? %>
-<div class="error-alert">
-  <ul>
-    <% model.errors.full_messages.each do |message| %>
-    <li class='error-message'><%= 価格設定は¥300~¥9,999,999になります %></li>
-    <% end %>
-  </ul>
-</div>
+  <div class="error-alert">
+    <ul>
+      <% @item.errors.full_messages.each do |message| %>
+      <li class='error-message'><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
