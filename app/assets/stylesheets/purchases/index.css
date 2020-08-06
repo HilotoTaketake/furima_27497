@@ -79,6 +79,18 @@
   font-size: 25px;
 }
 
+.error-alert {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.error-message {
+  font-size: 1.3vw;
+  list-style: circle;
+  color: rgb(182, 48, 0);
+}
+
 /* /支払額の表示 */
 
 /* カード情報の入力 */

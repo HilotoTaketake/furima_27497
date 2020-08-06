@@ -11,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     @user = User.new(sign_up_params)
-    if @user.save!
+    if @user.save
       bypass_sign_in(@user)
       redirect_to root_path
     else

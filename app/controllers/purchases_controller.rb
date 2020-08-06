@@ -6,6 +6,7 @@ class PurchasesController < ApplicationController
     @user = current_user
     @purchase = Purchase.new
     @item = Item.find(params[:id])
+    @address = Address.new
   end
 
   def create
@@ -14,7 +15,8 @@ class PurchasesController < ApplicationController
     @purchase.item = @item
     @address = Address.new(address_params)
     @address.item = @item
-    if @purchase.save! && @address.save! 
+    @user = User.find(params[:id])
+    if @purchase.save && @address.save
       pay_item
       return redirect_to root_path
     else

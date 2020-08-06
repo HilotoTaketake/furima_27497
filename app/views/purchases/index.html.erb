@@ -19,7 +19,15 @@
         </div>
       </div>
       <%# /購入内容の表示 %>
-
+      <% if @address.errors.any? %>
+        <div class="error-alert">
+          <ul>
+            <% @address.errors.full_messages.each do |message| %>
+              <li class='error-message'><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
       <%# 支払額の表示 %>
       <div class='item-payment'>
         <h1 class='item-payment-title'>
@@ -30,7 +38,7 @@
         </p>
       </div>
     <%# /支払額の表示 %>
-
+  
     <%= form_with model: @purchase, url: create_purchase_path(@user.id, @item.id), method: "post", id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
       <%# カード情報の入力 %>
      
