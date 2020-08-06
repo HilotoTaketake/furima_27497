@@ -2,8 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:destroy]
   before_action :item_restriction, only: [:show]
-  before_action :set_user, only: [:show]
-
+  
   def index
     @item = Item.all.order("created_at DESC")
     @user = User.all
@@ -52,10 +51,6 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
-  end
-
-  def set_user
-    @user = User.find(params[:id])
   end
 
   def item_restriction
