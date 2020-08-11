@@ -129,7 +129,7 @@
           <li class='list-o'>
             <%= link_to show_item_path(item.id), method: :get do %>
             <div class='item-img-content-o'>
-              <%= image_tag item.image.variant(combine_options:{resize:"240x240^",crop:"240x240+0+0",gravity: :center}).processed if item.image.present? %>
+              <%= image_tag item.image.variant(combine_options:{resize:"240x240^",crop:"240x240+0+0",gravity: :center}) if item.image.present? %>
               <% unless item.purchases.empty? %>
                 <div class='sold-out-o'> 
                   <span>Sold Out!!</span> 
